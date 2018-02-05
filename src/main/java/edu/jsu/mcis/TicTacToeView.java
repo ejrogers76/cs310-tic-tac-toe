@@ -16,7 +16,21 @@ public class TicTacToeView {
         
         /* Print the board to the console (see examples) */
         
-        /* INSERT YOUR CODE HERE */
+        System.out.println("  ");
+        for(int i = 0; i < model.getWidth(); i++){
+            System.out.print(i + " ");
+        }
+        
+        System.out.print("\n");
+        
+        for(int i = 0; i < model.getWidth(); i++){
+            System.out.print(i + " ");
+            
+            for(int j = 0; j < model.getWidth(); j++){
+                System.out.print(model.getMark(i, j));
+            }
+            System.out.print("\n");
+        }
 
     }
 
