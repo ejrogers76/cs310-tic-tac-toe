@@ -93,33 +93,40 @@ public class TicTacToeModel{
         
         boolean markMade = false;
         
-        if(isValidSquare(row, col) == true && isSquareMarked(row, col) == false){
-            if(xTurn == true)
-                grid[row][col] = Mark.X;
-            else
-                grid[row][col] = Mark.O;
-            
-            if(xTurn == true)
-                xTurn = false;
-            else
-                xTurn = true;
-            
-            markMade = true;
+		if(isValidSquare(row, col) == true){
+			if(isSquareMarked(row, col) == false){
+				if(xTurn == true)
+					grid[row][col] = Mark.X;
+				else
+					grid[row][col] = Mark.O;
+				
+				if(xTurn == true)
+					xTurn = false;
+				else
+					xTurn = true;
+				
+				markMade = true;
+			}
+			else
+				markMade = false;
+		
         }
-        else
-            markMade = false;
-        
-        return markMade;
+		
+		return markMade;
     }
 	
     private boolean isValidSquare(int row, int col) {
         
         /* Return true if specified location is within grid bounds */
-        
-        if(row < width && col < width)
-            return true;
-        else
-            return false;
+        boolean isValid = false;
+		
+		
+        if(row < width && row >= 0){
+			if(col < width && col >= 0)
+				isValid = true;
+        }
+		
+		return isValid;
         
     }
 	
@@ -150,9 +157,9 @@ public class TicTacToeModel{
         
         
         
-        if(isMarkWin(Mark.X) && xTurn)
+        if(isMarkWin(Mark.X) && !xTurn)
             return Result.X;
-        else if(isMarkWin(Mark.O) && !xTurn)
+        else if(isMarkWin(Mark.O) && xTurn)
             return Result.O;
         else if(isTie())
             return Result.TIE;
