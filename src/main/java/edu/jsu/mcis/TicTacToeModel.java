@@ -10,7 +10,7 @@ public class TicTacToeModel{
         
         X("X"), 
         O("O"), 
-        EMPTY(" ");
+        EMPTY("-");
 
         private String message;
         
@@ -91,18 +91,25 @@ public class TicTacToeModel{
            location, but only if the location is valid and if the square is
            empty! */
         
+        boolean markMade = false;
+        
         if(isValidSquare(row, col) == true && isSquareMarked(row, col) == false){
             if(xTurn == true)
                 grid[row][col] = Mark.X;
             else
                 grid[row][col] = Mark.O;
             
-            return true;
+            if(xTurn == true)
+                xTurn = false;
+            else
+                xTurn = true;
+            
+            markMade = true;
         }
-        
         else
-            return false;
+            markMade = false;
         
+        return markMade;
     }
 	
     private boolean isValidSquare(int row, int col) {
@@ -121,9 +128,9 @@ public class TicTacToeModel{
         /* Return true if square at specified location is marked */
         
         if(grid[row][col] == Mark.EMPTY)
-            return true;
+            return false;
         else
-            return false; /* remove this line! */
+            return true;
             
     }
 	
@@ -141,9 +148,16 @@ public class TicTacToeModel{
            tie, or if the game is not over, and return the corresponding Result
            value */
         
-        /* INSERT YOUR CODE HERE */
-
-        return null; /* remove this line! */
+        
+        
+        if(isMarkWin(Mark.X) && xTurn)
+            return Result.X;
+        else if(isMarkWin(Mark.O) && !xTurn)
+            return Result.O;
+        else if(isTie())
+            return Result.TIE;
+        else
+            return Result.NONE;
 
     }
 	
@@ -151,20 +165,74 @@ public class TicTacToeModel{
         
         /* Check the squares of the board to see if the specified mark is the
            winner */
+
+        boolean win = false;
+        int consecutive = 0;
         
-        /* INSERT YOUR CODE HERE */
-
-        return false; /* remove this line! */
-
+        //check the rows
+        for(int i = 0; i < width; i++){
+            consecutive = 0;
+            for(int j = 0; j < width; j++){
+                if(grid[i][j].equals(mark))
+                    consecutive++;
+            }
+            
+            if(consecutive == width)
+                win = true;
+        }
+        
+        consecutive = 0;
+        
+        //check the columns
+        for(int i = 0; i < width; i++){
+            consecutive = 0;
+            for(int j = 0; j < width; j++){
+                if(grid[j][i].equals(mark))
+                    consecutive++;
+            }
+            
+            if(consecutive == width)
+                win = true;
+        }
+        
+        consecutive = 0;
+        
+        //check the diagonal
+        for(int i = 0; i < width; i++){
+            if(grid[i][i].equals(mark))
+                consecutive++;
+        
+            if(consecutive == width)
+                win = true;
+        }
+      
+        consecutive = 0;
+        
+        //check the antidiagonal
+        for(int i = 0; i < width; i++){
+            if(grid[i][width-i - 1].equals(mark))
+                consecutive++;
+            
+            if(consecutive == width)
+                win = true;
+        }
+        
+        return win;
     }
 	
     private boolean isTie() {
         
         /* Check the squares of the board to see if the game is a tie */
-
-        /* INSERT YOUR CODE HERE */
-
-        return false; /* remove this line! */
+        boolean tie = true;
+        
+        for(int i = 0; i< width; i++){
+            for(int j = 0; j < width; j++){
+                if(getMark(i,j) == Mark.EMPTY)
+                    tie = false;
+            }
+        }
+            
+        return tie;
         
     }
 
