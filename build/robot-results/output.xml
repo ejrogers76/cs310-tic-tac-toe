@@ -1,0 +1,784 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.0 (Jython 2.7.0 on java1.8.0_161)" generated="20180214 12:40:28.245">
+<suite source="C:\Users\jndro_000\Desktop\GitHub_Files\cs310-tic-tac-toe\src\test\acceptancetest" name="Acceptancetest" id="s1">
+<suite source="C:\Users\jndro_000\Desktop\GitHub_Files\cs310-tic-tac-toe\src\test\acceptancetest\TicTacToeTests.robot" name="TicTacToeTests" id="s1-s1">
+<test name="Win Diagonally as X" id="s1-s1-t1">
+<kw library="keywords.TicTacToeKeywords" name="Start New Game">
+<status endtime="20180214 12:40:29.214" starttime="20180214 12:40:29.198" status="PASS"></status>
+</kw>
+<kw library="keywords.TicTacToeKeywords" name="Mark Location">
+<arguments>
+<arg>1</arg>
+<arg>1</arg>
+</arguments>
+<status endtime="20180214 12:40:29.229" starttime="20180214 12:40:29.229" status="PASS"></status>
+</kw>
+<kw name="Check Location">
+<arguments>
+<arg>1</arg>
+<arg>1</arg>
+<arg>X</arg>
+</arguments>
+<kw library="keywords.TicTacToeKeywords" name="Get Mark">
+<arguments>
+<arg>${row}</arg>
+<arg>${col}</arg>
+</arguments>
+<assign>
+<var>${m}</var>
+</assign>
+<msg level="INFO" timestamp="20180214 12:40:29.276">${m} = X</msg>
+<status endtime="20180214 12:40:29.292" starttime="20180214 12:40:29.245" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Should Be Equal">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${m}</arg>
+<arg>${mark}</arg>
+</arguments>
+<status endtime="20180214 12:40:29.307" starttime="20180214 12:40:29.292" status="PASS"></status>
+</kw>
+<status endtime="20180214 12:40:29.323" starttime="20180214 12:40:29.245" status="PASS"></status>
+</kw>
+<kw library="keywords.TicTacToeKeywords" name="Mark Location">
+<arguments>
+<arg>0</arg>
+<arg>1</arg>
+</arguments>
+<status endtime="20180214 12:40:29.323" starttime="20180214 12:40:29.323" status="PASS"></status>
+</kw>
+<kw name="Check Location">
+<arguments>
+<arg>0</arg>
+<arg>1</arg>
+<arg>O</arg>
+</arguments>
+<kw library="keywords.TicTacToeKeywords" name="Get Mark">
+<arguments>
+<arg>${row}</arg>
+<arg>${col}</arg>
+</arguments>
+<assign>
+<var>${m}</var>
+</assign>
+<msg level="INFO" timestamp="20180214 12:40:29.354">${m} = O</msg>
+<status endtime="20180214 12:40:29.354" starttime="20180214 12:40:29.339" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Should Be Equal">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${m}</arg>
+<arg>${mark}</arg>
+</arguments>
+<status endtime="20180214 12:40:29.386" starttime="20180214 12:40:29.370" status="PASS"></status>
+</kw>
+<status endtime="20180214 12:40:29.386" starttime="20180214 12:40:29.339" status="PASS"></status>
+</kw>
+<kw library="keywords.TicTacToeKeywords" name="Mark Location">
+<arguments>
+<arg>0</arg>
+<arg>0</arg>
+</arguments>
+<status endtime="20180214 12:40:29.401" starttime="20180214 12:40:29.386" status="PASS"></status>
+</kw>
+<kw name="Check Location">
+<arguments>
+<arg>0</arg>
+<arg>0</arg>
+<arg>X</arg>
+</arguments>
+<kw library="keywords.TicTacToeKeywords" name="Get Mark">
+<arguments>
+<arg>${row}</arg>
+<arg>${col}</arg>
+</arguments>
+<assign>
+<var>${m}</var>
+</assign>
+<msg level="INFO" timestamp="20180214 12:40:29.417">${m} = X</msg>
+<status endtime="20180214 12:40:29.432" starttime="20180214 12:40:29.417" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Should Be Equal">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${m}</arg>
+<arg>${mark}</arg>
+</arguments>
+<status endtime="20180214 12:40:29.448" starttime="20180214 12:40:29.432" status="PASS"></status>
+</kw>
+<status endtime="20180214 12:40:29.448" starttime="20180214 12:40:29.401" status="PASS"></status>
+</kw>
+<kw library="keywords.TicTacToeKeywords" name="Mark Location">
+<arguments>
+<arg>0</arg>
+<arg>2</arg>
+</arguments>
+<status endtime="20180214 12:40:29.464" starttime="20180214 12:40:29.448" status="PASS"></status>
+</kw>
+<kw name="Check Location">
+<arguments>
+<arg>0</arg>
+<arg>2</arg>
+<arg>O</arg>
+</arguments>
+<kw library="keywords.TicTacToeKeywords" name="Get Mark">
+<arguments>
+<arg>${row}</arg>
+<arg>${col}</arg>
+</arguments>
+<assign>
+<var>${m}</var>
+</assign>
+<msg level="INFO" timestamp="20180214 12:40:29.479">${m} = O</msg>
+<status endtime="20180214 12:40:29.495" starttime="20180214 12:40:29.479" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Should Be Equal">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${m}</arg>
+<arg>${mark}</arg>
+</arguments>
+<status endtime="20180214 12:40:29.511" starttime="20180214 12:40:29.495" status="PASS"></status>
+</kw>
+<status endtime="20180214 12:40:29.511" starttime="20180214 12:40:29.464" status="PASS"></status>
+</kw>
+<kw library="keywords.TicTacToeKeywords" name="Mark Location">
+<arguments>
+<arg>2</arg>
+<arg>2</arg>
+</arguments>
+<status endtime="20180214 12:40:29.526" starttime="20180214 12:40:29.511" status="PASS"></status>
+</kw>
+<kw name="Check Location">
+<arguments>
+<arg>2</arg>
+<arg>2</arg>
+<arg>X</arg>
+</arguments>
+<kw library="keywords.TicTacToeKeywords" name="Get Mark">
+<arguments>
+<arg>${row}</arg>
+<arg>${col}</arg>
+</arguments>
+<assign>
+<var>${m}</var>
+</assign>
+<msg level="INFO" timestamp="20180214 12:40:29.542">${m} = X</msg>
+<status endtime="20180214 12:40:29.557" starttime="20180214 12:40:29.542" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Should Be Equal">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${m}</arg>
+<arg>${mark}</arg>
+</arguments>
+<status endtime="20180214 12:40:29.573" starttime="20180214 12:40:29.557" status="PASS"></status>
+</kw>
+<status endtime="20180214 12:40:29.573" starttime="20180214 12:40:29.526" status="PASS"></status>
+</kw>
+<kw name="Winner Should Be">
+<arguments>
+<arg>X</arg>
+</arguments>
+<kw library="keywords.TicTacToeKeywords" name="Get Winner">
+<assign>
+<var>${m}</var>
+</assign>
+<msg level="INFO" timestamp="20180214 12:40:29.589">${m} = X</msg>
+<status endtime="20180214 12:40:29.604" starttime="20180214 12:40:29.589" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Should Be Equal">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${m}</arg>
+<arg>${mark}</arg>
+</arguments>
+<status endtime="20180214 12:40:29.620" starttime="20180214 12:40:29.604" status="PASS"></status>
+</kw>
+<status endtime="20180214 12:40:29.620" starttime="20180214 12:40:29.573" status="PASS"></status>
+</kw>
+<status critical="yes" endtime="20180214 12:40:29.620" starttime="20180214 12:40:29.182" status="PASS"></status>
+</test>
+<test name="Win Horizontally as O" id="s1-s1-t2">
+<kw library="keywords.TicTacToeKeywords" name="Start New Game">
+<status endtime="20180214 12:40:29.651" starttime="20180214 12:40:29.636" status="PASS"></status>
+</kw>
+<kw library="keywords.TicTacToeKeywords" name="Mark Location">
+<arguments>
+<arg>1</arg>
+<arg>1</arg>
+</arguments>
+<status endtime="20180214 12:40:29.667" starttime="20180214 12:40:29.651" status="PASS"></status>
+</kw>
+<kw name="Check Location">
+<arguments>
+<arg>1</arg>
+<arg>1</arg>
+<arg>X</arg>
+</arguments>
+<kw library="keywords.TicTacToeKeywords" name="Get Mark">
+<arguments>
+<arg>${row}</arg>
+<arg>${col}</arg>
+</arguments>
+<assign>
+<var>${m}</var>
+</assign>
+<msg level="INFO" timestamp="20180214 12:40:29.683">${m} = X</msg>
+<status endtime="20180214 12:40:29.698" starttime="20180214 12:40:29.683" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Should Be Equal">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${m}</arg>
+<arg>${mark}</arg>
+</arguments>
+<status endtime="20180214 12:40:29.714" starttime="20180214 12:40:29.698" status="PASS"></status>
+</kw>
+<status endtime="20180214 12:40:29.714" starttime="20180214 12:40:29.667" status="PASS"></status>
+</kw>
+<kw library="keywords.TicTacToeKeywords" name="Mark Location">
+<arguments>
+<arg>2</arg>
+<arg>0</arg>
+</arguments>
+<status endtime="20180214 12:40:29.730" starttime="20180214 12:40:29.714" status="PASS"></status>
+</kw>
+<kw name="Check Location">
+<arguments>
+<arg>2</arg>
+<arg>0</arg>
+<arg>O</arg>
+</arguments>
+<kw library="keywords.TicTacToeKeywords" name="Get Mark">
+<arguments>
+<arg>${row}</arg>
+<arg>${col}</arg>
+</arguments>
+<assign>
+<var>${m}</var>
+</assign>
+<msg level="INFO" timestamp="20180214 12:40:29.761">${m} = O</msg>
+<status endtime="20180214 12:40:29.761" starttime="20180214 12:40:29.745" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Should Be Equal">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${m}</arg>
+<arg>${mark}</arg>
+</arguments>
+<status endtime="20180214 12:40:29.776" starttime="20180214 12:40:29.761" status="PASS"></status>
+</kw>
+<status endtime="20180214 12:40:29.776" starttime="20180214 12:40:29.730" status="PASS"></status>
+</kw>
+<kw library="keywords.TicTacToeKeywords" name="Mark Location">
+<arguments>
+<arg>0</arg>
+<arg>0</arg>
+</arguments>
+<status endtime="20180214 12:40:29.792" starttime="20180214 12:40:29.776" status="PASS"></status>
+</kw>
+<kw name="Check Location">
+<arguments>
+<arg>0</arg>
+<arg>0</arg>
+<arg>X</arg>
+</arguments>
+<kw library="keywords.TicTacToeKeywords" name="Get Mark">
+<arguments>
+<arg>${row}</arg>
+<arg>${col}</arg>
+</arguments>
+<assign>
+<var>${m}</var>
+</assign>
+<msg level="INFO" timestamp="20180214 12:40:29.808">${m} = X</msg>
+<status endtime="20180214 12:40:29.823" starttime="20180214 12:40:29.808" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Should Be Equal">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${m}</arg>
+<arg>${mark}</arg>
+</arguments>
+<status endtime="20180214 12:40:29.839" starttime="20180214 12:40:29.823" status="PASS"></status>
+</kw>
+<status endtime="20180214 12:40:29.839" starttime="20180214 12:40:29.792" status="PASS"></status>
+</kw>
+<kw library="keywords.TicTacToeKeywords" name="Mark Location">
+<arguments>
+<arg>2</arg>
+<arg>2</arg>
+</arguments>
+<status endtime="20180214 12:40:29.855" starttime="20180214 12:40:29.839" status="PASS"></status>
+</kw>
+<kw name="Check Location">
+<arguments>
+<arg>2</arg>
+<arg>2</arg>
+<arg>O</arg>
+</arguments>
+<kw library="keywords.TicTacToeKeywords" name="Get Mark">
+<arguments>
+<arg>${row}</arg>
+<arg>${col}</arg>
+</arguments>
+<assign>
+<var>${m}</var>
+</assign>
+<msg level="INFO" timestamp="20180214 12:40:29.870">${m} = O</msg>
+<status endtime="20180214 12:40:29.870" starttime="20180214 12:40:29.855" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Should Be Equal">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${m}</arg>
+<arg>${mark}</arg>
+</arguments>
+<status endtime="20180214 12:40:29.886" starttime="20180214 12:40:29.886" status="PASS"></status>
+</kw>
+<status endtime="20180214 12:40:29.886" starttime="20180214 12:40:29.855" status="PASS"></status>
+</kw>
+<kw library="keywords.TicTacToeKeywords" name="Mark Location">
+<arguments>
+<arg>0</arg>
+<arg>2</arg>
+</arguments>
+<status endtime="20180214 12:40:29.901" starttime="20180214 12:40:29.901" status="PASS"></status>
+</kw>
+<kw name="Check Location">
+<arguments>
+<arg>0</arg>
+<arg>2</arg>
+<arg>X</arg>
+</arguments>
+<kw library="keywords.TicTacToeKeywords" name="Get Mark">
+<arguments>
+<arg>${row}</arg>
+<arg>${col}</arg>
+</arguments>
+<assign>
+<var>${m}</var>
+</assign>
+<msg level="INFO" timestamp="20180214 12:40:29.933">${m} = X</msg>
+<status endtime="20180214 12:40:29.933" starttime="20180214 12:40:29.917" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Should Be Equal">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${m}</arg>
+<arg>${mark}</arg>
+</arguments>
+<status endtime="20180214 12:40:29.948" starttime="20180214 12:40:29.933" status="PASS"></status>
+</kw>
+<status endtime="20180214 12:40:29.948" starttime="20180214 12:40:29.901" status="PASS"></status>
+</kw>
+<kw library="keywords.TicTacToeKeywords" name="Mark Location">
+<arguments>
+<arg>2</arg>
+<arg>1</arg>
+</arguments>
+<status endtime="20180214 12:40:29.964" starttime="20180214 12:40:29.948" status="PASS"></status>
+</kw>
+<kw name="Check Location">
+<arguments>
+<arg>2</arg>
+<arg>1</arg>
+<arg>O</arg>
+</arguments>
+<kw library="keywords.TicTacToeKeywords" name="Get Mark">
+<arguments>
+<arg>${row}</arg>
+<arg>${col}</arg>
+</arguments>
+<assign>
+<var>${m}</var>
+</assign>
+<msg level="INFO" timestamp="20180214 12:40:29.980">${m} = O</msg>
+<status endtime="20180214 12:40:29.995" starttime="20180214 12:40:29.980" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Should Be Equal">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${m}</arg>
+<arg>${mark}</arg>
+</arguments>
+<status endtime="20180214 12:40:30.011" starttime="20180214 12:40:29.995" status="PASS"></status>
+</kw>
+<status endtime="20180214 12:40:30.011" starttime="20180214 12:40:29.964" status="PASS"></status>
+</kw>
+<kw name="Winner Should Be">
+<arguments>
+<arg>O</arg>
+</arguments>
+<kw library="keywords.TicTacToeKeywords" name="Get Winner">
+<assign>
+<var>${m}</var>
+</assign>
+<msg level="INFO" timestamp="20180214 12:40:30.026">${m} = O</msg>
+<status endtime="20180214 12:40:30.026" starttime="20180214 12:40:30.026" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Should Be Equal">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${m}</arg>
+<arg>${mark}</arg>
+</arguments>
+<status endtime="20180214 12:40:30.042" starttime="20180214 12:40:30.042" status="PASS"></status>
+</kw>
+<status endtime="20180214 12:40:30.058" starttime="20180214 12:40:30.011" status="PASS"></status>
+</kw>
+<status critical="yes" endtime="20180214 12:40:30.058" starttime="20180214 12:40:29.636" status="PASS"></status>
+</test>
+<test name="Force a Tie" id="s1-s1-t3">
+<kw library="keywords.TicTacToeKeywords" name="Start New Game">
+<status endtime="20180214 12:40:30.089" starttime="20180214 12:40:30.073" status="PASS"></status>
+</kw>
+<kw library="keywords.TicTacToeKeywords" name="Mark Location">
+<arguments>
+<arg>1</arg>
+<arg>1</arg>
+</arguments>
+<status endtime="20180214 12:40:30.089" starttime="20180214 12:40:30.089" status="PASS"></status>
+</kw>
+<kw name="Check Location">
+<arguments>
+<arg>1</arg>
+<arg>1</arg>
+<arg>X</arg>
+</arguments>
+<kw library="keywords.TicTacToeKeywords" name="Get Mark">
+<arguments>
+<arg>${row}</arg>
+<arg>${col}</arg>
+</arguments>
+<assign>
+<var>${m}</var>
+</assign>
+<msg level="INFO" timestamp="20180214 12:40:30.120">${m} = X</msg>
+<status endtime="20180214 12:40:30.120" starttime="20180214 12:40:30.105" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Should Be Equal">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${m}</arg>
+<arg>${mark}</arg>
+</arguments>
+<status endtime="20180214 12:40:30.136" starttime="20180214 12:40:30.120" status="PASS"></status>
+</kw>
+<status endtime="20180214 12:40:30.136" starttime="20180214 12:40:30.105" status="PASS"></status>
+</kw>
+<kw library="keywords.TicTacToeKeywords" name="Mark Location">
+<arguments>
+<arg>0</arg>
+<arg>0</arg>
+</arguments>
+<status endtime="20180214 12:40:30.151" starttime="20180214 12:40:30.151" status="PASS"></status>
+</kw>
+<kw name="Check Location">
+<arguments>
+<arg>0</arg>
+<arg>0</arg>
+<arg>O</arg>
+</arguments>
+<kw library="keywords.TicTacToeKeywords" name="Get Mark">
+<arguments>
+<arg>${row}</arg>
+<arg>${col}</arg>
+</arguments>
+<assign>
+<var>${m}</var>
+</assign>
+<msg level="INFO" timestamp="20180214 12:40:30.183">${m} = O</msg>
+<status endtime="20180214 12:40:30.183" starttime="20180214 12:40:30.167" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Should Be Equal">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${m}</arg>
+<arg>${mark}</arg>
+</arguments>
+<status endtime="20180214 12:40:30.214" starttime="20180214 12:40:30.198" status="PASS"></status>
+</kw>
+<status endtime="20180214 12:40:30.214" starttime="20180214 12:40:30.167" status="PASS"></status>
+</kw>
+<kw library="keywords.TicTacToeKeywords" name="Mark Location">
+<arguments>
+<arg>2</arg>
+<arg>0</arg>
+</arguments>
+<status endtime="20180214 12:40:30.230" starttime="20180214 12:40:30.214" status="PASS"></status>
+</kw>
+<kw name="Check Location">
+<arguments>
+<arg>2</arg>
+<arg>0</arg>
+<arg>X</arg>
+</arguments>
+<kw library="keywords.TicTacToeKeywords" name="Get Mark">
+<arguments>
+<arg>${row}</arg>
+<arg>${col}</arg>
+</arguments>
+<assign>
+<var>${m}</var>
+</assign>
+<msg level="INFO" timestamp="20180214 12:40:30.261">${m} = X</msg>
+<status endtime="20180214 12:40:30.261" starttime="20180214 12:40:30.245" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Should Be Equal">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${m}</arg>
+<arg>${mark}</arg>
+</arguments>
+<status endtime="20180214 12:40:30.276" starttime="20180214 12:40:30.261" status="PASS"></status>
+</kw>
+<status endtime="20180214 12:40:30.276" starttime="20180214 12:40:30.230" status="PASS"></status>
+</kw>
+<kw library="keywords.TicTacToeKeywords" name="Mark Location">
+<arguments>
+<arg>0</arg>
+<arg>2</arg>
+</arguments>
+<status endtime="20180214 12:40:30.292" starttime="20180214 12:40:30.276" status="PASS"></status>
+</kw>
+<kw name="Check Location">
+<arguments>
+<arg>0</arg>
+<arg>2</arg>
+<arg>O</arg>
+</arguments>
+<kw library="keywords.TicTacToeKeywords" name="Get Mark">
+<arguments>
+<arg>${row}</arg>
+<arg>${col}</arg>
+</arguments>
+<assign>
+<var>${m}</var>
+</assign>
+<msg level="INFO" timestamp="20180214 12:40:30.308">${m} = O</msg>
+<status endtime="20180214 12:40:30.308" starttime="20180214 12:40:30.292" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Should Be Equal">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${m}</arg>
+<arg>${mark}</arg>
+</arguments>
+<status endtime="20180214 12:40:30.323" starttime="20180214 12:40:30.308" status="PASS"></status>
+</kw>
+<status endtime="20180214 12:40:30.323" starttime="20180214 12:40:30.292" status="PASS"></status>
+</kw>
+<kw library="keywords.TicTacToeKeywords" name="Mark Location">
+<arguments>
+<arg>0</arg>
+<arg>1</arg>
+</arguments>
+<status endtime="20180214 12:40:30.339" starttime="20180214 12:40:30.323" status="PASS"></status>
+</kw>
+<kw name="Check Location">
+<arguments>
+<arg>0</arg>
+<arg>1</arg>
+<arg>X</arg>
+</arguments>
+<kw library="keywords.TicTacToeKeywords" name="Get Mark">
+<arguments>
+<arg>${row}</arg>
+<arg>${col}</arg>
+</arguments>
+<assign>
+<var>${m}</var>
+</assign>
+<msg level="INFO" timestamp="20180214 12:40:30.355">${m} = X</msg>
+<status endtime="20180214 12:40:30.370" starttime="20180214 12:40:30.355" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Should Be Equal">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${m}</arg>
+<arg>${mark}</arg>
+</arguments>
+<status endtime="20180214 12:40:30.370" starttime="20180214 12:40:30.370" status="PASS"></status>
+</kw>
+<status endtime="20180214 12:40:30.386" starttime="20180214 12:40:30.339" status="PASS"></status>
+</kw>
+<kw library="keywords.TicTacToeKeywords" name="Mark Location">
+<arguments>
+<arg>2</arg>
+<arg>1</arg>
+</arguments>
+<status endtime="20180214 12:40:30.386" starttime="20180214 12:40:30.386" status="PASS"></status>
+</kw>
+<kw name="Check Location">
+<arguments>
+<arg>2</arg>
+<arg>1</arg>
+<arg>O</arg>
+</arguments>
+<kw library="keywords.TicTacToeKeywords" name="Get Mark">
+<arguments>
+<arg>${row}</arg>
+<arg>${col}</arg>
+</arguments>
+<assign>
+<var>${m}</var>
+</assign>
+<msg level="INFO" timestamp="20180214 12:40:30.417">${m} = O</msg>
+<status endtime="20180214 12:40:30.417" starttime="20180214 12:40:30.401" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Should Be Equal">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${m}</arg>
+<arg>${mark}</arg>
+</arguments>
+<status endtime="20180214 12:40:30.433" starttime="20180214 12:40:30.417" status="PASS"></status>
+</kw>
+<status endtime="20180214 12:40:30.433" starttime="20180214 12:40:30.401" status="PASS"></status>
+</kw>
+<kw library="keywords.TicTacToeKeywords" name="Mark Location">
+<arguments>
+<arg>1</arg>
+<arg>2</arg>
+</arguments>
+<status endtime="20180214 12:40:30.448" starttime="20180214 12:40:30.433" status="PASS"></status>
+</kw>
+<kw name="Check Location">
+<arguments>
+<arg>1</arg>
+<arg>2</arg>
+<arg>X</arg>
+</arguments>
+<kw library="keywords.TicTacToeKeywords" name="Get Mark">
+<arguments>
+<arg>${row}</arg>
+<arg>${col}</arg>
+</arguments>
+<assign>
+<var>${m}</var>
+</assign>
+<msg level="INFO" timestamp="20180214 12:40:30.464">${m} = X</msg>
+<status endtime="20180214 12:40:30.464" starttime="20180214 12:40:30.464" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Should Be Equal">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${m}</arg>
+<arg>${mark}</arg>
+</arguments>
+<status endtime="20180214 12:40:30.480" starttime="20180214 12:40:30.480" status="PASS"></status>
+</kw>
+<status endtime="20180214 12:40:30.480" starttime="20180214 12:40:30.448" status="PASS"></status>
+</kw>
+<kw library="keywords.TicTacToeKeywords" name="Mark Location">
+<arguments>
+<arg>1</arg>
+<arg>0</arg>
+</arguments>
+<status endtime="20180214 12:40:30.495" starttime="20180214 12:40:30.495" status="PASS"></status>
+</kw>
+<kw name="Check Location">
+<arguments>
+<arg>1</arg>
+<arg>0</arg>
+<arg>O</arg>
+</arguments>
+<kw library="keywords.TicTacToeKeywords" name="Get Mark">
+<arguments>
+<arg>${row}</arg>
+<arg>${col}</arg>
+</arguments>
+<assign>
+<var>${m}</var>
+</assign>
+<msg level="INFO" timestamp="20180214 12:40:30.511">${m} = O</msg>
+<status endtime="20180214 12:40:30.526" starttime="20180214 12:40:30.511" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Should Be Equal">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${m}</arg>
+<arg>${mark}</arg>
+</arguments>
+<status endtime="20180214 12:40:30.526" starttime="20180214 12:40:30.526" status="PASS"></status>
+</kw>
+<status endtime="20180214 12:40:30.542" starttime="20180214 12:40:30.495" status="PASS"></status>
+</kw>
+<kw library="keywords.TicTacToeKeywords" name="Mark Location">
+<arguments>
+<arg>2</arg>
+<arg>2</arg>
+</arguments>
+<status endtime="20180214 12:40:30.542" starttime="20180214 12:40:30.542" status="PASS"></status>
+</kw>
+<kw name="Check Location">
+<arguments>
+<arg>2</arg>
+<arg>2</arg>
+<arg>X</arg>
+</arguments>
+<kw library="keywords.TicTacToeKeywords" name="Get Mark">
+<arguments>
+<arg>${row}</arg>
+<arg>${col}</arg>
+</arguments>
+<assign>
+<var>${m}</var>
+</assign>
+<msg level="INFO" timestamp="20180214 12:40:30.573">${m} = X</msg>
+<status endtime="20180214 12:40:30.573" starttime="20180214 12:40:30.558" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Should Be Equal">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${m}</arg>
+<arg>${mark}</arg>
+</arguments>
+<status endtime="20180214 12:40:30.589" starttime="20180214 12:40:30.573" status="PASS"></status>
+</kw>
+<status endtime="20180214 12:40:30.589" starttime="20180214 12:40:30.542" status="PASS"></status>
+</kw>
+<kw name="Winner Should Be">
+<arguments>
+<arg>TIE</arg>
+</arguments>
+<kw library="keywords.TicTacToeKeywords" name="Get Winner">
+<assign>
+<var>${m}</var>
+</assign>
+<msg level="INFO" timestamp="20180214 12:40:30.605">${m} = TIE</msg>
+<status endtime="20180214 12:40:30.605" starttime="20180214 12:40:30.605" status="PASS"></status>
+</kw>
+<kw library="BuiltIn" name="Should Be Equal">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${m}</arg>
+<arg>${mark}</arg>
+</arguments>
+<status endtime="20180214 12:40:30.620" starttime="20180214 12:40:30.620" status="PASS"></status>
+</kw>
+<status endtime="20180214 12:40:30.636" starttime="20180214 12:40:30.589" status="PASS"></status>
+</kw>
+<status critical="yes" endtime="20180214 12:40:30.636" starttime="20180214 12:40:30.058" status="PASS"></status>
+</test>
+<status endtime="20180214 12:40:30.651" starttime="20180214 12:40:29.042" status="PASS"></status>
+</suite>
+<status endtime="20180214 12:40:30.683" starttime="20180214 12:40:28.292" status="PASS"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="0">Critical Tests</stat>
+<stat pass="3" fail="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="3" fail="0" name="Acceptancetest" id="s1">Acceptancetest</stat>
+<stat pass="3" fail="0" name="TicTacToeTests" id="s1-s1">Acceptancetest.TicTacToeTests</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

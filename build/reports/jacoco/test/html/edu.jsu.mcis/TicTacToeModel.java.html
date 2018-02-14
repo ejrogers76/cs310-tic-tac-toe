@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>TicTacToeModel.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">cs310-tic-tac-toe</a> &gt; <a href="index.source.html" class="el_package">edu.jsu.mcis</a> &gt; <span class="el_source">TicTacToeModel.java</span></div><h1>TicTacToeModel.java</h1><pre class="source lang-java linenums">package edu.jsu.mcis;
+
+public class TicTacToeModel{
+    
+    private static final int DEFAULT_WIDTH = 3;
+    
+    /* Mark (represents X, O, or an empty square */
+    
+<span class="pc" id="L9">    public enum Mark {</span>
+        
+<span class="fc" id="L11">        X(&quot;X&quot;), </span>
+<span class="fc" id="L12">        O(&quot;O&quot;), </span>
+<span class="fc" id="L13">        EMPTY(&quot;-&quot;);</span>
+
+        private String message;
+        
+<span class="fc" id="L17">        private Mark(String msg) {</span>
+<span class="fc" id="L18">            message = msg;</span>
+<span class="fc" id="L19">        }</span>
+        
+        @Override
+        public String toString() {
+<span class="nc" id="L23">            return message;</span>
+        }
+        
+    };
+    
+    /* Result (represents the final state of the game: X wins, O wins, a tie,
+       or NONE if the game is not yet over) */
+    
+<span class="pc" id="L31">    public enum Result {</span>
+        
+<span class="fc" id="L33">        X(&quot;X&quot;), </span>
+<span class="fc" id="L34">        O(&quot;O&quot;), </span>
+<span class="fc" id="L35">        TIE(&quot;Tie&quot;), </span>
+<span class="fc" id="L36">        NONE(&quot;none&quot;);</span>
+
+        private String message;
+        
+<span class="fc" id="L40">        private Result(String msg) {</span>
+<span class="fc" id="L41">            message = msg;</span>
+<span class="fc" id="L42">        }</span>
+        
+        @Override
+        public String toString() {
+<span class="nc" id="L46">            return message;</span>
+        }
+        
+    };
+    
+    private Mark[][] grid; /* Game grid */
+    private boolean xTurn; /* True if X is current player */
+    private int width;     /* Size of game grid */
+    
+    /* DEFAULT CONSTRUCTOR */
+    
+    public TicTacToeModel() {
+        
+        /* No arguments (call main constructor; use default size) */
+        
+<span class="nc" id="L61">        this(DEFAULT_WIDTH);</span>
+        
+<span class="nc" id="L63">    }</span>
+    
+    /* CONSTRUCTOR */
+    
+<span class="fc" id="L67">    public TicTacToeModel(int width) {</span>
+        
+        /* Initialize width; X goes first */
+        
+<span class="fc" id="L71">        this.width = width;</span>
+<span class="fc" id="L72">        xTurn = true;</span>
+        
+        /* Create grid (width x width) as a 2D Mark array */
+
+<span class="fc" id="L76">        grid = new Mark[width][width];</span>
+
+        /* Initialize grid by filling every square with empty marks */
+
+<span class="fc bfc" id="L80" title="All 2 branches covered.">        for(int i = 0; i &lt; width; i++){</span>
+<span class="fc bfc" id="L81" title="All 2 branches covered.">            for(int j = 0; j &lt; width; j++){</span>
+<span class="fc" id="L82">                grid[i][j] = Mark.EMPTY;</span>
+            }
+        }
+        
+<span class="fc" id="L86">    }</span>
+	
+    public boolean makeMark(int row, int col) {
+        
+        /* Place the current player's mark in the square at the specified
+           location, but only if the location is valid and if the square is
+           empty! */
+        
+<span class="fc" id="L94">        boolean markMade = false;</span>
+        
+<span class="fc bfc" id="L96" title="All 2 branches covered.">		if(isValidSquare(row, col) == true){</span>
+<span class="fc bfc" id="L97" title="All 2 branches covered.">			if(isSquareMarked(row, col) == false){</span>
+<span class="fc bfc" id="L98" title="All 2 branches covered.">				if(xTurn == true)</span>
+<span class="fc" id="L99">					grid[row][col] = Mark.X;</span>
+				else
+<span class="fc" id="L101">					grid[row][col] = Mark.O;</span>
+				
+<span class="fc bfc" id="L103" title="All 2 branches covered.">				if(xTurn == true)</span>
+<span class="fc" id="L104">					xTurn = false;</span>
+				else
+<span class="fc" id="L106">					xTurn = true;</span>
+				
+<span class="fc" id="L108">				markMade = true;</span>
+			}
+			else
+<span class="fc" id="L111">				markMade = false;</span>
+		
+        }
+		
+<span class="fc" id="L115">		return markMade;</span>
+    }
+	
+    private boolean isValidSquare(int row, int col) {
+        
+        /* Return true if specified location is within grid bounds */
+<span class="fc" id="L121">        boolean isValid = false;</span>
+		
+		
+<span class="fc bfc" id="L124" title="All 4 branches covered.">        if(row &lt; width &amp;&amp; row &gt;= 0){</span>
+<span class="fc bfc" id="L125" title="All 4 branches covered.">			if(col &lt; width &amp;&amp; col &gt;= 0)</span>
+<span class="fc" id="L126">				isValid = true;</span>
+        }
+		
+<span class="fc" id="L129">		return isValid;</span>
+        
+    }
+	
+    private boolean isSquareMarked(int row, int col) {
+        
+        /* Return true if square at specified location is marked */
+        
+<span class="fc bfc" id="L137" title="All 2 branches covered.">        if(grid[row][col] == Mark.EMPTY)</span>
+<span class="fc" id="L138">            return false;</span>
+        else
+<span class="fc" id="L140">            return true;</span>
+            
+    }
+	
+    public Mark getMark(int row, int col) {
+        
+        /* Return mark from the square at the specified location */
+        
+<span class="fc" id="L148">        return grid[row][col];</span>
+            
+    }
+	
+    public Result getResult() {
+        
+        /* Use isMarkWin() to see if X or O is the winner, if the game is a
+           tie, or if the game is not over, and return the corresponding Result
+           value */
+        
+        
+        
+<span class="pc bpc" id="L160" title="1 of 4 branches missed.">        if(isMarkWin(Mark.X) &amp;&amp; !xTurn)</span>
+<span class="fc" id="L161">            return Result.X;</span>
+<span class="pc bpc" id="L162" title="1 of 4 branches missed.">        else if(isMarkWin(Mark.O) &amp;&amp; xTurn)</span>
+<span class="fc" id="L163">            return Result.O;</span>
+<span class="fc bfc" id="L164" title="All 2 branches covered.">        else if(isTie())</span>
+<span class="fc" id="L165">            return Result.TIE;</span>
+        else
+<span class="fc" id="L167">            return Result.NONE;</span>
+
+    }
+	
+    private boolean isMarkWin(Mark mark) {
+        
+        /* Check the squares of the board to see if the specified mark is the
+           winner */
+
+<span class="fc" id="L176">        boolean win = false;</span>
+<span class="fc" id="L177">        int consecutive = 0;</span>
+        
+        //check the rows
+<span class="fc bfc" id="L180" title="All 2 branches covered.">        for(int i = 0; i &lt; width; i++){</span>
+<span class="fc" id="L181">            consecutive = 0;</span>
+<span class="fc bfc" id="L182" title="All 2 branches covered.">            for(int j = 0; j &lt; width; j++){</span>
+<span class="fc bfc" id="L183" title="All 2 branches covered.">                if(grid[i][j].equals(mark))</span>
+<span class="fc" id="L184">                    consecutive++;</span>
+            }
+            
+<span class="fc bfc" id="L187" title="All 2 branches covered.">            if(consecutive == width)</span>
+<span class="fc" id="L188">                win = true;</span>
+        }
+        
+<span class="fc" id="L191">        consecutive = 0;</span>
+        
+        //check the columns
+<span class="fc bfc" id="L194" title="All 2 branches covered.">        for(int i = 0; i &lt; width; i++){</span>
+<span class="fc" id="L195">            consecutive = 0;</span>
+<span class="fc bfc" id="L196" title="All 2 branches covered.">            for(int j = 0; j &lt; width; j++){</span>
+<span class="fc bfc" id="L197" title="All 2 branches covered.">                if(grid[j][i].equals(mark))</span>
+<span class="fc" id="L198">                    consecutive++;</span>
+            }
+            
+<span class="fc bfc" id="L201" title="All 2 branches covered.">            if(consecutive == width)</span>
+<span class="fc" id="L202">                win = true;</span>
+        }
+        
+<span class="fc" id="L205">        consecutive = 0;</span>
+        
+        //check the diagonal
+<span class="fc bfc" id="L208" title="All 2 branches covered.">        for(int i = 0; i &lt; width; i++){</span>
+<span class="fc bfc" id="L209" title="All 2 branches covered.">            if(grid[i][i].equals(mark))</span>
+<span class="fc" id="L210">                consecutive++;</span>
+        
+<span class="fc bfc" id="L212" title="All 2 branches covered.">            if(consecutive == width)</span>
+<span class="fc" id="L213">                win = true;</span>
+        }
+      
+<span class="fc" id="L216">        consecutive = 0;</span>
+        
+        //check the antidiagonal
+<span class="fc bfc" id="L219" title="All 2 branches covered.">        for(int i = 0; i &lt; width; i++){</span>
+<span class="fc bfc" id="L220" title="All 2 branches covered.">            if(grid[i][width-i - 1].equals(mark))</span>
+<span class="fc" id="L221">                consecutive++;</span>
+            
+<span class="fc bfc" id="L223" title="All 2 branches covered.">            if(consecutive == width)</span>
+<span class="fc" id="L224">                win = true;</span>
+        }
+        
+<span class="fc" id="L227">        return win;</span>
+    }
+	
+    private boolean isTie() {
+        
+        /* Check the squares of the board to see if the game is a tie */
+<span class="fc" id="L233">        boolean tie = true;</span>
+        
+<span class="fc bfc" id="L235" title="All 2 branches covered.">        for(int i = 0; i&lt; width; i++){</span>
+<span class="fc bfc" id="L236" title="All 2 branches covered.">            for(int j = 0; j &lt; width; j++){</span>
+<span class="fc bfc" id="L237" title="All 2 branches covered.">                if(getMark(i,j) == Mark.EMPTY)</span>
+<span class="fc" id="L238">                    tie = false;</span>
+            }
+        }
+            
+<span class="fc" id="L242">        return tie;</span>
+        
+    }
+
+    public boolean isGameover(){
+        
+        /* Return true if the game is over */
+        
+<span class="nc bnc" id="L250" title="All 2 branches missed.">        return Result.NONE != getResult();</span>
+        
+    }
+
+    public boolean isXTurn(){
+        
+        /* Getter for xTurn */
+        
+<span class="nc" id="L258">        return xTurn;</span>
+        
+    }
+
+    public int getWidth(){
+        
+        /* Getter for width */
+        
+<span class="fc" id="L266">        return width;</span>
+        
+    }
+    
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.9.201702052155</span></div></body></html>
